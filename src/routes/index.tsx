@@ -1,26 +1,35 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { TopBar } from "@/components/TopBar";
+import { Sidebar } from "@/components/Sidebar";
+import { BriefHero } from "@/components/BriefHero";
+import { TrendingToday } from "@/components/TrendingToday";
+import { ReelBriefs } from "@/components/ReelBriefs";
+import { LongForm } from "@/components/LongForm";
+import { QuickWins } from "@/components/QuickWins";
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  component: Dashboard,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Dashboard() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      <TopBar />
+      <div className="flex">
+        <Sidebar />
+        <main className="flex-1 min-w-0">
+          <BriefHero />
+          <div className="space-y-10 px-6 py-8">
+            <TrendingToday />
+            <ReelBriefs />
+            <LongForm />
+            <QuickWins />
+            <footer className="border-t border-border pt-6 text-center text-[11px] uppercase tracking-widest text-muted-foreground">
+              Media Intelligence · Urdu Newsroom Operating System · End of Brief
+            </footer>
+          </div>
+        </main>
+      </div>
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
