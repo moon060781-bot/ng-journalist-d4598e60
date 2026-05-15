@@ -12,7 +12,15 @@ import {
   LayoutDashboard,
 } from "lucide-react";
 
-const sections = [
+type NavItem = {
+  icon: typeof Flame;
+  name: string;
+  count: number | null;
+  active?: boolean;
+  accent?: "breaking" | "intel" | "editorial" | "positive";
+};
+
+const sections: { label: string; items: NavItem[] }[] = [
   {
     label: "Briefing",
     items: [
