@@ -94,7 +94,7 @@ export function TrendingToday() {
                   <span className="text-intel">Source: {s.source}</span>
                 </div>
 
-                <div className="mt-3 grid gap-3 rounded-md border border-border bg-surface/40 p-3 text-xs leading-relaxed md:grid-cols-2">
+                <div className="mt-3 grid gap-3 rounded-md border border-border bg-background/40 p-3 text-xs leading-relaxed md:grid-cols-2">
                   <div>
                     <div className="mb-1 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
                       Why it matters
@@ -111,10 +111,10 @@ export function TrendingToday() {
               </div>
 
               <div className="flex shrink-0 flex-row gap-2 md:flex-col">
-                <button className="rounded-md border border-border bg-surface p-2 text-muted-foreground hover:text-foreground">
+                <button className="rounded-md border border-border bg-background p-2 text-muted-foreground hover:text-foreground">
                   <Bookmark className="h-4 w-4" />
                 </button>
-                <button className="rounded-md border border-border bg-surface p-2 text-muted-foreground hover:text-foreground">
+                <button className="rounded-md border border-border bg-background p-2 text-muted-foreground hover:text-foreground">
                   <ExternalLink className="h-4 w-4" />
                 </button>
               </div>

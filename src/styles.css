@@ -10,7 +10,6 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --color-background: var(--background);
-  --color-page-foreground: var(--page-foreground);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -47,10 +46,9 @@
 :root {
   --radius: 0.75rem;
 
-  /* Light page background with dark boxes */
-  --background: oklch(0.94 0.005 260);      /* Light gray page bg */
-  --foreground: oklch(0.96 0.005 250);       /* Light text for dark surfaces */
-  --page-foreground: oklch(0.22 0.02 260); /* Dark text for light bg */
+  /* Newsroom dark theme — always-on */
+  --background: oklch(0.17 0.01 260);
+  --foreground: oklch(0.96 0.005 250);
 
   --surface: oklch(0.21 0.012 260);
   --surface-elevated: oklch(0.25 0.014 260);
@@ -65,7 +63,7 @@
   --secondary: oklch(0.28 0.014 260);
   --secondary-foreground: oklch(0.96 0.005 250);
   --muted: oklch(0.25 0.012 260);
-  --muted-foreground: oklch(0.55 0.014 260); /* Darkened for light bg readability */
+  --muted-foreground: oklch(0.68 0.014 260);
   --accent: oklch(0.3 0.02 260);
   --accent-foreground: oklch(0.96 0.005 250);
 
@@ -96,12 +94,11 @@
 .dark {
   --background: oklch(0.17 0.01 260);
   --foreground: oklch(0.96 0.005 250);
-  --page-foreground: oklch(0.96 0.005 250);
 }
 
 @layer base {
   * { border-color: var(--color-border); }
-  html, body { background-color: var(--color-background); color: var(--color-page-foreground); }
+  html, body { background-color: var(--color-background); color: var(--color-foreground); }
   body {
     font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv11";
@@ -134,14 +131,14 @@
     to bottom,
     transparent 0px,
     transparent 2px,
-    oklch(0 0 0 / 0.018) 3px,
+    oklch(1 0 0 / 0.012) 3px,
     transparent 4px
   );
 }
 
 .grid-bg {
   background-image:
-    linear-gradient(oklch(0 0 0 / 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, oklch(0 0 0 / 0.04) 1px, transparent 1px);
+    linear-gradient(oklch(1 0 0 / 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(1 0 0 / 0.025) 1px, transparent 1px);
   background-size: 48px 48px;
 }
