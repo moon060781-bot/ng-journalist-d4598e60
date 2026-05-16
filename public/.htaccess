@@ -1,0 +1,35 @@
+# SPA fallback for Apache (cPanel).
+# Ensures deep links and page refreshes resolve to index.html
+# instead of returning a 404.
+#
+# If deploying into a SUBFOLDER (e.g. public_html/news/), change
+# RewriteBase below to match (e.g. RewriteBase /news/) AND make
+# sure you built with VITE_BASE_PATH=/news/.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Don't rewrite real files or directories
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Everything else -> index.html
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Long-cache hashed assets
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|woff2?|ttf|otf|svg|png|jpg|jpeg|gif|webp|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# Gzip
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>

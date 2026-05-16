@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { TopBar } from "@/components/TopBar";
 import { Sidebar } from "@/components/Sidebar";
 import { BriefHero } from "@/components/BriefHero";
@@ -7,11 +6,7 @@ import { ReelBriefs } from "@/components/ReelBriefs";
 import { LongForm } from "@/components/LongForm";
 import { QuickWins } from "@/components/QuickWins";
 
-export const Route = createFileRoute("/")({
-  component: Dashboard,
-});
-
-function Dashboard() {
+export default function App() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <TopBar />
