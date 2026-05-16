@@ -51,7 +51,7 @@ const sections: { label: string; items: NavItem[] }[] = [
 
 export function Sidebar() {
   return (
-    <aside className="hidden w-60 shrink-0 border-r border-border bg-sidebar lg:block">
+    <aside className="hidden w-60 shrink-0 border-r border-border bg-sidebar dark lg:block">
       <nav className="sticky top-[97px] flex h-[calc(100vh-97px)] flex-col gap-6 overflow-y-auto px-3 py-5">
         {sections.map((section) => (
           <div key={section.label}>

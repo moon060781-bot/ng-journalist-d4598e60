@@ -54,7 +54,7 @@ export function LongForm() {
   return (
     <section className="grid gap-4 lg:grid-cols-[2fr_1fr]">
       {/* YouTube long-form */}
-      <article className="overflow-hidden rounded-xl border border-border bg-surface/80">
+      <article className="overflow-hidden rounded-xl border border-border bg-surface dark">
         <header className="flex items-center justify-between border-b border-border bg-editorial/10 px-5 py-3">
           <div className="flex items-center gap-2">
             <Youtube className="h-4 w-4 text-editorial" />
@@ -143,7 +143,7 @@ export function LongForm() {
       </article>
 
       {/* Newsletter */}
-      <article className="overflow-hidden rounded-xl border border-border bg-surface/80">
+      <article className="overflow-hidden rounded-xl border border-border bg-surface dark">
         <header className="flex items-center gap-2 border-b border-border bg-positive/10 px-5 py-3">
           <Newspaper className="h-4 w-4 text-positive" />
           <span className="text-sm font-semibold text-positive">
