@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Globe, Languages, Radio, Bell, Search } from "lucide-react";
 
 const tickerItems = [
