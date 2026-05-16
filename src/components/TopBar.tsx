@@ -50,19 +50,19 @@ export function TopBar() {
 
       {/* Toolbar */}
       <div className="flex items-center justify-between gap-4 px-6 py-3">
-        <div className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-md bg-intel/15 text-intel">
             <Radio className="h-5 w-5" />
           </div>
           <div className="leading-tight">
-            <h1 className="text-sm font-bold tracking-tight">
+            <h1 className="text-sm font-bold tracking-tight text-[var(--page-foreground)]">
               MEDIA INTELLIGENCE <span className="text-intel">/</span> اردو
             </h1>
             <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
               Global Newsroom Operating System
             </p>
           </div>
-        </div>
+        </Link>
 
         <div className="hidden flex-1 max-w-md md:block">
           <div className="flex items-center gap-2 rounded-md border border-border bg-surface px-3 py-1.5 text-sm text-muted-foreground">
