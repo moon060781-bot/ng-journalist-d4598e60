@@ -124,7 +124,7 @@ export function ReelBriefs() {
                 <p className="mt-0.5 text-sm font-semibold text-foreground">{r.topic}</p>
               </div>
 
-              <div className="rounded-md bg-background/50 p-3">
+              <div className="rounded-md bg-surface/50 p-3">
                 <div className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-widest text-editorial">
                   <Sparkles className="h-3 w-3" /> Hook strategy
                 </div>
@@ -132,7 +132,7 @@ export function ReelBriefs() {
               </div>
 
               {/* Thumbnail concept */}
-              <div className="rounded-md border border-border bg-background/60 p-3">
+              <div className="rounded-md border border-border bg-surface/60 p-3">
                 <div className="mb-2 flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
                   <ImageIcon className="h-3 w-3" /> Thumbnail concept
                 </div>
@@ -151,7 +151,7 @@ export function ReelBriefs() {
                 </div>
                 <pre
                   dir="rtl"
-                  className="font-urdu whitespace-pre-wrap rounded-md border border-border bg-background/60 p-3 text-sm leading-loose text-foreground/95"
+                  className="font-urdu whitespace-pre-wrap rounded-md border border-border bg-surface/60 p-3 text-sm leading-loose text-foreground/95"
                 >
                   {r.caption}
                 </pre>
@@ -175,7 +175,7 @@ export function ReelBriefs() {
               </div>
 
               {/* Script */}
-              <details className="group rounded-md border border-border bg-background/60">
+              <details className="group rounded-md border border-border bg-surface/60">
                 <summary className="flex cursor-pointer items-center justify-between px-3 py-2 text-[11px] font-semibold uppercase tracking-widest text-foreground">
                   <span>Full script — word for word</span>
                   <span className="font-mono text-muted-foreground group-open:rotate-180 transition">▾</span>

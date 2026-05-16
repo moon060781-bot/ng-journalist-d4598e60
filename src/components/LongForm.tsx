@@ -83,7 +83,7 @@ export function LongForm() {
             </p>
           </div>
 
-          <div className="rounded-md border border-border bg-background/60 p-4">
+          <div className="rounded-md border border-border bg-surface/60 p-4">
             <div className="mb-2 text-[10px] font-semibold uppercase tracking-widest text-editorial">
               Thumbnail concept
             </div>
@@ -119,7 +119,7 @@ export function LongForm() {
               {sections.map((s) => (
                 <div
                   key={s.range}
-                  className="rounded-md border border-border bg-background/60 p-3"
+                  className="rounded-md border border-border bg-surface/60 p-3"
                 >
                   <div className="mb-1.5 flex items-center gap-2">
                     <span className="rounded bg-editorial/15 px-1.5 py-0.5 font-mono text-[10px] font-semibold text-editorial">

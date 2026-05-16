@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { TopBar } from "@/components/TopBar";
 import { Sidebar } from "@/components/Sidebar";
 import { BriefHero } from "@/components/BriefHero";
@@ -7,8 +8,20 @@ import { LongForm } from "@/components/LongForm";
 import { QuickWins } from "@/components/QuickWins";
 
 export default function App() {
+  const [lastUpdated, setLastUpdated] = useState(new Date());
+
+  useEffect(() => {
+    const id = setInterval(() => setLastUpdated(new Date()), 60000);
+    return () => clearInterval(id);
+  }, []);
+
+  const fmt = (d: Date) =>
+    d.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" }) +
+    " · " +
+    d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
+
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-[var(--page-foreground)]">
       <TopBar />
       <div className="flex">
         <Sidebar />
@@ -20,7 +33,10 @@ export default function App() {
             <LongForm />
             <QuickWins />
             <footer className="border-t border-border pt-6 text-center text-[11px] uppercase tracking-widest text-muted-foreground">
-              Media Intelligence · Urdu Newsroom Operating System · End of Brief
+              <div>Media Intelligence · Urdu Newsroom Operating System · End of Brief</div>
+              <div className="mt-2">
+                © {new Date().getFullYear()} NoorGee Enterprise · Last updated {fmt(lastUpdated)}
+              </div>
             </footer>
           </div>
         </main>
