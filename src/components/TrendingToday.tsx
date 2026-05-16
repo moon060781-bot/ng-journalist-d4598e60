@@ -55,7 +55,7 @@ export function TrendingToday() {
         {trending.map((s) => (
           <article
             key={s.rank}
-            className="group relative overflow-hidden rounded-xl border border-border bg-surface/80 p-5 transition hover:border-intel/40 hover:bg-surface"
+            className="group relative overflow-hidden rounded-xl border border-border bg-surface p-5 transition hover:border-intel/40 hover:bg-surface dark"
           >
             <div className="flex flex-col gap-4 md:flex-row">
               <div className="flex shrink-0 flex-row items-center gap-3 md:w-32 md:flex-col md:items-start">
@@ -111,10 +111,10 @@ export function TrendingToday() {
               </div>
 
               <div className="flex shrink-0 flex-row gap-2 md:flex-col">
-                <button className="rounded-md border border-border bg-background p-2 text-muted-foreground hover:text-foreground">
+                <button className="rounded-md border border-border bg-surface-elevated p-2 text-muted-foreground hover:text-foreground">
                   <Bookmark className="h-4 w-4" />
                 </button>
-                <button className="rounded-md border border-border bg-background p-2 text-muted-foreground hover:text-foreground">
+                <button className="rounded-md border border-border bg-surface-elevated p-2 text-muted-foreground hover:text-foreground">
                   <ExternalLink className="h-4 w-4" />
                 </button>
               </div>

@@ -28,7 +28,7 @@ export function TopBar() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-30 border-b border-border bg-background/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-30 border-b border-border bg-surface backdrop-blur-xl dark">
       {/* Breaking ticker */}
       <div className="flex items-center border-b border-border bg-surface/60">
         <div className="flex shrink-0 items-center gap-2 bg-breaking px-3 py-1.5 text-[11px] font-bold uppercase tracking-widest text-breaking-foreground">
@@ -49,7 +49,12 @@ export function TopBar() {
 
       {/* Toolbar */}
       <div className="flex items-center justify-between gap-4 px-6 py-3">
-        <div className="flex items-center gap-3">
+        <a
+          href="https://news.noorgee.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3"
+        >
           <div className="flex h-9 w-9 items-center justify-center rounded-md bg-intel/15 text-intel">
             <Radio className="h-5 w-5" />
           </div>
@@ -61,7 +66,7 @@ export function TopBar() {
               Global Newsroom Operating System
             </p>
           </div>
-        </div>
+        </a>
 
         <div className="hidden flex-1 max-w-md md:block">
           <div className="flex items-center gap-2 rounded-md border border-border bg-surface px-3 py-1.5 text-sm text-muted-foreground">

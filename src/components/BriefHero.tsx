@@ -16,7 +16,7 @@ export function BriefHero() {
   ];
 
   return (
-    <section className="relative overflow-hidden border-b border-border bg-surface/40 grid-bg">
+    <section className="relative overflow-hidden border-b border-border bg-surface grid-bg dark">
       <div className="scanlines pointer-events-none absolute inset-0" />
       <div className="relative px-6 py-8">
         <div className="mb-6 flex flex-wrap items-end justify-between gap-4">

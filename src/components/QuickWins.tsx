@@ -60,7 +60,7 @@ export function QuickWins() {
         {wins.map((w, i) => (
           <article
             key={i}
-            className={`relative overflow-hidden rounded-xl border border-border bg-gradient-to-br ${platformBg[w.platform]} bg-surface p-4 transition hover:border-intel/40`}
+            className={`relative overflow-hidden rounded-xl border border-border bg-gradient-to-br ${platformBg[w.platform]} bg-surface p-4 transition hover:border-intel/40 dark`}
           >
             <div className="mb-3 flex items-center justify-between">
               <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">

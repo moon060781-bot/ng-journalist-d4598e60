@@ -92,7 +92,7 @@ export function ReelBriefs() {
         {reels.map((r) => (
           <article
             key={r.no}
-            className="overflow-hidden rounded-xl border border-border bg-surface/80"
+            className="overflow-hidden rounded-xl border border-border bg-surface dark"
           >
             <header
               className={`flex items-center justify-between border-b border-border px-5 py-3 ${
