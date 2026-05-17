@@ -80,7 +80,9 @@ export function Sidebar() {
                           : "text-muted-foreground";
                 return (
                   <li key={item.name}>
-                    <button
+                    <a
+                      href={item.href}
+                      onClick={(e) => handleNav(e, item.href)}
                       className={`group flex w-full items-center justify-between rounded-md px-3 py-2 text-sm transition ${
                         item.active
                           ? "bg-intel/10 text-foreground ring-1 ring-intel/30"
