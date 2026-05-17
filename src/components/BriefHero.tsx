@@ -1,4 +1,5 @@
 import { Calendar, Clock, FileDown, RefreshCw } from "lucide-react";
+import { downloadBriefMarkdown } from "@/lib/exportBrief";
 
 export function BriefHero() {
   const today = new Date().toLocaleDateString("en-US", {
@@ -45,8 +46,11 @@ export function BriefHero() {
             <button className="flex items-center gap-1.5 rounded-md border border-border bg-surface px-3 py-2 text-xs font-medium text-foreground transition hover:bg-surface-elevated">
               <RefreshCw className="h-3.5 w-3.5" /> Re-sync sources
             </button>
-            <button className="flex items-center gap-1.5 rounded-md bg-intel px-3 py-2 text-xs font-semibold text-primary-foreground shadow-lg shadow-intel/20 hover:bg-intel/90">
-              <FileDown className="h-3.5 w-3.5" /> Export Brief
+            <button
+              onClick={downloadBriefMarkdown}
+              className="flex items-center gap-1.5 rounded-md bg-intel px-3 py-2 text-xs font-semibold text-primary-foreground shadow-lg shadow-intel/20 hover:bg-intel/90"
+            >
+              <FileDown className="h-3.5 w-3.5" /> Export Brief (.md)
             </button>
           </div>
         </div>
