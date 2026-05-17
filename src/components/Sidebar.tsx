@@ -104,7 +104,7 @@ export function Sidebar() {
                           {item.count}
                         </span>
                       )}
-                    </button>
+                    </a>
                   </li>
                 );
               })}
