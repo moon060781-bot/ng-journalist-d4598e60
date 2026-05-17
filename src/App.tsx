@@ -31,12 +31,14 @@ export default function App() {
       <div className="flex">
         <Sidebar />
         <main className="flex-1 min-w-0">
-          <BriefHero />
+          <div id="brief">
+            <BriefHero />
+          </div>
           <div className="space-y-10 px-6 py-8">
-            <TrendingToday />
-            <ReelBriefs />
-            <LongForm />
-            <QuickWins />
+            <div id="trending"><TrendingToday /></div>
+            <div id="reels"><ReelBriefs /></div>
+            <div id="longform"><LongForm /></div>
+            <div id="quickwins"><QuickWins /></div>
             <footer className="border-t border-border pt-6 pb-4 text-center text-[11px] uppercase tracking-widest text-muted-foreground space-y-2">
               <div>Media Intelligence · Urdu Newsroom Operating System · End of Brief</div>
               <div className="text-[10px] normal-case tracking-normal">
