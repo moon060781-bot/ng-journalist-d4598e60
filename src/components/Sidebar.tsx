@@ -16,6 +16,7 @@ type NavItem = {
   icon: typeof Flame;
   name: string;
   count: number | null;
+  href: string;
   active?: boolean;
   accent?: "breaking" | "intel" | "editorial" | "positive";
 };
@@ -24,30 +25,36 @@ const sections: { label: string; items: NavItem[] }[] = [
   {
     label: "Briefing",
     items: [
-      { icon: LayoutDashboard, name: "Daily Brief", count: null, active: true },
-      { icon: Flame, name: "Breaking News", count: 7, accent: "breaking" },
+      { icon: LayoutDashboard, name: "Daily Brief", count: null, href: "#brief", active: true },
+      { icon: Flame, name: "Breaking News", count: 7, href: "#trending", accent: "breaking" },
     ],
   },
   {
     label: "Beats",
     items: [
-      { icon: Scale, name: "Media Policy", count: 12 },
-      { icon: ShieldAlert, name: "Press Freedom", count: 9 },
-      { icon: Cpu, name: "AI in Media", count: 24, accent: "intel" },
-      { icon: ShieldCheck, name: "Journalist Safety", count: 5 },
-      { icon: Banknote, name: "Newsroom Economy", count: 14 },
-      { icon: Layers, name: "Platform Changes", count: 18 },
+      { icon: Scale, name: "Media Policy", count: 12, href: "#longform" },
+      { icon: ShieldAlert, name: "Press Freedom", count: 9, href: "#trending" },
+      { icon: Cpu, name: "AI in Media", count: 24, href: "#reels", accent: "intel" },
+      { icon: ShieldCheck, name: "Journalist Safety", count: 5, href: "#quickwins" },
+      { icon: Banknote, name: "Newsroom Economy", count: 14, href: "#longform" },
+      { icon: Layers, name: "Platform Changes", count: 18, href: "#trending" },
     ],
   },
   {
     label: "Pipeline",
     items: [
-      { icon: Sparkles, name: "Opportunities", count: 6, accent: "positive" },
-      { icon: GraduationCap, name: "Fellowships", count: 4 },
-      { icon: Search, name: "Investigations", count: 3, accent: "editorial" },
+      { icon: Sparkles, name: "Opportunities", count: 6, href: "#quickwins", accent: "positive" },
+      { icon: GraduationCap, name: "Fellowships", count: 4, href: "#quickwins" },
+      { icon: Search, name: "Investigations", count: 3, href: "#longform", accent: "editorial" },
     ],
   },
 ];
+
+function handleNav(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
+  e.preventDefault();
+  const el = document.querySelector(href);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
 export function Sidebar() {
   return (
@@ -73,7 +80,9 @@ export function Sidebar() {
                           : "text-muted-foreground";
                 return (
                   <li key={item.name}>
-                    <button
+                    <a
+                      href={item.href}
+                      onClick={(e) => handleNav(e, item.href)}
                       className={`group flex w-full items-center justify-between rounded-md px-3 py-2 text-sm transition ${
                         item.active
                           ? "bg-intel/10 text-foreground ring-1 ring-intel/30"
@@ -95,7 +104,7 @@ export function Sidebar() {
                           {item.count}
                         </span>
                       )}
-                    </button>
+                    </a>
                   </li>
                 );
               })}
